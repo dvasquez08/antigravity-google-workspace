@@ -31,6 +31,14 @@ THese are the steps that I will show in my first video of this series on how to 
 - Antigravity 2.0: Make sure to upgrade to 2.0 if you're still running the old version
 - Python 3: Required for running the MCP server locally
 
+Linux (Ubuntu/Mint):
+
+```bash
+sudo apt update && sudo apt install python3 -y
+```
+
+Windows/Mac: [Python Download](https://www.python.org/downloads/)
+
 ### Steps: Follow these steps along in my video
 
 1. Login to Google Cloud Console and create a project
