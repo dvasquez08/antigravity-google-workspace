@@ -64,8 +64,8 @@ Examples:
 
 ## Step 5
 
-Produce a Morning Briefing. Send it to david@dvasquez.net. The subject should be
-"Today's Breifing" along with  today's date. The body of the email should contain:
+Produce a Morning Briefing. Send it to YOUR_EMAIL@example.com. The subject should be
+"Today's Breifing" along with today's date. Write the body of the email in HTML so that it renders nicely for the reader. The body of the email should contain:
 
 Sections:
 
