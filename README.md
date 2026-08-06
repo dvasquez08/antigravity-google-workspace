@@ -21,7 +21,7 @@ For business inquiries: dvasquez@davtek.io
 ## Table of Contents
 
 - [Antigravity MCP Server Setup Steps](#antigravity-mcp-server-setup-steps)
-- 
+- [Inbox Cleanup and Notion MCP Server Connection](#inbox-cleanup-and-notion-mcp-server-connection)
 
 ## Antigravity MCP Server Setup Steps
 
