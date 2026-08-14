@@ -85,4 +85,58 @@ Read NOTION_TOKEN from the local .env file and update my MCP server configuratio
 
 8. Test your meeting prep workflow by entering the following prompt below:
 
-"Read the meeting-prep.md markdown file, and help me prepare for today's meetings, as per the instructions in that file.
+"Read the meeting-prep.md markdown file, and help me prepare for today's meetings, as per the instructions in that file."
+
+## AI Assistant UI Dashboard Setup:
+
+### What to do:
+
+1. Get weather API: [OpenWeather API Key](https://openweathermap.org/api)
+
+2. Open the .evn file, the same one where you have your Notion secret. Adjust the .env file to contain the following
+
+- VITE_WEATHER_API_KEY=YOUR_WEATHER_API_KEY_KERE
+- VITE_WEATHER_CITY=YOUR_CITY_LOCATION_HERE
+
+3. To Build the UI, Enter this prompt below:
+
+### Prompt Start
+
+Act as a principal frontend engineer and UI/UX designer. Build a sleek, high-tech command center dashboard using React, Vite, Tailwind CSS, and Lucide React icons.
+
+### Design System & Theme Rules
+- Theme: Modern dark mode by default (slate-950 background, dark zinc/slate cards, subtle border highlights, glowing accents).
+- Typography: Clean, scannable typography with clear visual hierarchy.
+- Layout: Top header with status indicators, main dashboard layout with a 2-column split (Left: Workflow Launchpad & Weather, Right: Active Execution & Live History).
+
+### Key Features & Components
+
+1. Header & Local Weather Widget:
+   - Header title: "AI Agent Operations Center" with a live clock and glowing "System Online" indicator.
+   - Weather Card: Check `.env` for `VITE_WEATHER_API_KEY` (or standard OpenWeather API format). If available, fetch local weather data (temperature, condition, location name) and render a glassmorphism weather widget with matching Lucide icons (Sun, Cloud, Rain, etc.). If no key is present, display a subtle mock fallback widget without throwing errors.
+
+2. Workflow Launchpad (Action Cards):
+   Create visually distinct interactive cards for our three standard operating procedures:
+   - "Start My Workday" (Triggers `start-my-work-day.md`)
+   - "Clean Up Inbox" (Triggers `cleanup-inbox.md`)
+   - "Prep Today's Meetings" (Triggers `meeting-prep.md`)
+   Each card should feature an icon, a brief description, a "Run Workflow" trigger button, and a hover transition effect.
+
+3. Live Execution Modal / Panel:
+   - When a user clicks a workflow button, trigger a simulated execution state (or hit `POST /api/workflows/run` with the corresponding workflow filename).
+   - Display a real-time terminal output panel showing streamed logs, active steps, and progress bars (e.g., "Reading calendar events...", "Fetching meeting briefs from Google Docs...", "Publishing to Notion...").
+   - Include a green success state once finished, complete with a button to open the resulting output.
+
+4. Execution History & Activity Log:
+   - A sidebar or bottom section displaying recent workflow runs.
+   - Show timestamp, workflow title, status tag ("Completed", "Running", "Failed"), and an interactive expand toggle to view details.
+
+Please structure the code cleanly into `src/components/`, set up tailwind properly, and provide the exact file tree along with command terminal instructions to launch the app locally.
+
+### Prompt End
+
+4. Test out each button, if it does not work as intended, send the behavior to Antigravity along with any error messages if any, and ask it to fix the problem.
+
+5. Send the following prompt to create a script so that you can open it with a shortcut, rather than opening Antigravity each time to open the Dashboard:
+
+"Please create a script so that I can run it, and it automatically starts this application and run any services that it needs. Place it into the root of the project directory."
