@@ -139,4 +139,4 @@ Please structure the code cleanly into `src/components/`, set up tailwind proper
 
 5. Send the following prompt to create a script so that you can open it with a shortcut, rather than opening Antigravity each time to open the Dashboard:
 
-"Please create a script so that I can run it, and it automatically starts this application and run any services that it needs. Place it into the root of the project directory."
+"Please create a script so when I can run it, it starts everything that is needed for the app, and it opens up a browser with this dashboard loaded."
