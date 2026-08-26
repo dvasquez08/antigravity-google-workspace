@@ -33,7 +33,7 @@ Permanently delete (or move to Trash) any **unread** email originating from:
 2. **Filter & Match**: Check sender criteria against the Action Rules above.
 3. **Execute**:
    * Apply designated labels (`Clients`, `Vendors`, `Projects`) to matching unread emails.
-   * Trash/Delete matching emails from Walter Hayes or Joseph (404 Media).
+   * Trash/Delete matching emails from Zapier.
 4. **Report**: Output a simple count of actions taken:
    * Number of unread emails checked.
    * Labels applied (by label name).
