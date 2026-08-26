@@ -22,6 +22,7 @@ For business inquiries: dvasquez@davtek.io
 
 - [Antigravity MCP Server Setup Steps](#antigravity-mcp-server-setup-steps)
 - [Inbox Cleanup and Notion MCP Server Connection](#inbox-cleanup-and-notion-mcp-server-connection)
+- [AI Assistant UI Dashboard Setup](#ai-assistant-ui-dashboard-setup)
 
 ## Antigravity MCP Server Setup Steps
 
@@ -31,7 +32,14 @@ THese are the steps that I will show in my first video of this series on how to 
 
 - Antigravity 2.0: Make sure to upgrade to 2.0 if you're still running the old version
 - Python 3: Required for running the MCP server locally
-  Linux (Ubuntu/Mint):
+
+### NOTE:
+
+In Google Cloud Console, if you do not publish your app, your token will expire after 7 days. So this will stop working. If you want to keep using this setup beyond 7 days, then make sure you publish the app in Google Console.
+
+You can do this by going to APIs and Services -> OAuth Consent Screen -> Audience and publish your app there.
+
+Otherwise, if you're just experimenting, you can skip this step.
 
 ```bash
 sudo apt update && sudo apt install python3 -y
@@ -106,8 +114,6 @@ Read NOTION_TOKEN from the local .env file and update my MCP server configuratio
    - `VITE_WEATHER_CITY=YOUR_CITY_LOCATION_HERE`
 3. To Build the UI, Enter this prompt below:
 
-### Prompt Start
-
 ```text
 Act as a principal frontend engineer and UI/UX designer. Build a sleek, high-tech command center dashboard using React, Vite, Tailwind CSS, and Lucide React icons.
 
@@ -140,8 +146,6 @@ Act as a principal frontend engineer and UI/UX designer. Build a sleek, high-tec
 
 Please structure the code cleanly into `src/components/`, set up tailwind properly, and provide the exact file tree along with command terminal instructions to launch the app locally.
 ```
-
-### Prompt End
 
 4. Test out each button, if it does not work as intended, send the behavior to Antigravity along with any error messages if any, and ask it to fix the problem.
 5. Send the following prompt to create a script so that you can open it with a shortcut, rather than opening Antigravity each time to open the Dashboard:
