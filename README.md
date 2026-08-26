@@ -31,8 +31,7 @@ THese are the steps that I will show in my first video of this series on how to 
 
 - Antigravity 2.0: Make sure to upgrade to 2.0 if you're still running the old version
 - Python 3: Required for running the MCP server locally
-
-Linux (Ubuntu/Mint):
+  Linux (Ubuntu/Mint):
 
 ```bash
 sudo apt update && sudo apt install python3 -y
@@ -49,11 +48,13 @@ Windows/Mac: [Python Download](https://www.python.org/downloads/)
 5. Create a project folder and copy credentials to it
 6. Paste this prompt for setting up the MCP Server:
 
+```text
 "I have added my Google OAuth client credentials file to this workspace root directory.
 
 Please set up an MCP (Model Context Protocol) connection for Google Workspace using the taylorwilsdon/google_workspace_mcp package.
 
 Walk me through any initial dependencies or local setup, locate my credentials file, and trigger the local OAuth authentication flow so I can authorize the connection."
+```
 
 7. Review the access request and accept the changes.
 
@@ -67,41 +68,47 @@ Follow along here for episode 2, where I add two additional workflows and connec
 2. Grab the contents from the templates here in this repo, also inside the workflows folder. Paste them into your new files.
 3. Test the inbox cleanup workflow by entering in the following prompt:
 
+```text
 "Please read inbox-cleanup.md and cleanup my inbox as per the instructions in that markdown file, remember to only touch unread messages."
+```
 
-4. Go to the [Notions Connection page]("https://app.notion.com/developers/connections") and sign in with your Notion account.
+4. Go to the [Notions Connection page](https://app.notion.com/developers/connections) and sign in with your Notion account.
 5. Choose "Access Token," give your connection a name, and click "Create Token."
 6. On the next page, copy your token. Create a new file in the root of your project and call it ".env" and add the following line:
 
+```text
 NOTION_TOKEN="YOUR NOTION TOKEN HERE"
+```
 
 7. Back to antigravity, setup your Notion MCP server by entering this single prompt:
 
+```text
 "I have added my Notion Integration Secret as NOTION_TOKEN inside the .env file in this workspace root directory.
 
 Please set up the Notion MCP server for this project. Use the official @notionhq/notion-mcp-server package (via npx -y @notionhq/notion-mcp-server).
 
 Read NOTION_TOKEN from the local .env file and update my MCP server configuration file so that both Google Workspace and Notion run side-by-side as available tool sources."
+```
 
 8. Test your meeting prep workflow by entering the following prompt below:
 
+```text
 "Read the meeting-prep.md markdown file, and help me prepare for today's meetings, as per the instructions in that file."
+```
 
 ## AI Assistant UI Dashboard Setup:
 
 ### What to do:
 
 1. Get weather API: [OpenWeather API Key](https://openweathermap.org/api)
-
 2. Open the .evn file, the same one where you have your Notion secret. Adjust the .env file to contain the following
-
-- VITE_WEATHER_API_KEY=YOUR_WEATHER_API_KEY_KERE
-- VITE_WEATHER_CITY=YOUR_CITY_LOCATION_HERE
-
+   - `VITE_WEATHER_API_KEY=YOUR_WEATHER_API_KEY_KERE`
+   - `VITE_WEATHER_CITY=YOUR_CITY_LOCATION_HERE`
 3. To Build the UI, Enter this prompt below:
 
 ### Prompt Start
 
+```text
 Act as a principal frontend engineer and UI/UX designer. Build a sleek, high-tech command center dashboard using React, Vite, Tailwind CSS, and Lucide React icons.
 
 ### Design System & Theme Rules
@@ -132,11 +139,13 @@ Act as a principal frontend engineer and UI/UX designer. Build a sleek, high-tec
    - Show timestamp, workflow title, status tag ("Completed", "Running", "Failed"), and an interactive expand toggle to view details.
 
 Please structure the code cleanly into `src/components/`, set up tailwind properly, and provide the exact file tree along with command terminal instructions to launch the app locally.
+```
 
 ### Prompt End
 
 4. Test out each button, if it does not work as intended, send the behavior to Antigravity along with any error messages if any, and ask it to fix the problem.
-
 5. Send the following prompt to create a script so that you can open it with a shortcut, rather than opening Antigravity each time to open the Dashboard:
 
+```text
 "Please create a script so when I can run it, it starts everything that is needed for the app, and it opens up a browser with this dashboard loaded."
+```
